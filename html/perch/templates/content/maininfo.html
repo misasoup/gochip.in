@@ -1,0 +1,32 @@
+<h1><perch:content id="name" title="" type="text" label="name" help="restaurant name" required="true"/></h1>
+<figure>
+	<img src="<perch:content id="mainimgsrc" title="" type="image" label="Main Img" help="src of main picture"/>" alt="<perch:content id="mainimgcaption" title="" type="text" label="Main Img caption" help="caption of main picture"/>">
+	<figcaption><perch:content id="mainimgcaption" title="" type="text" label="Main Img caption" help="caption of main picture"/></figcaption>
+</figure>
+<section>
+	<h2>基本情報</h2>
+	<table>
+		<tr>
+			<th>カテゴリー</th>
+			<td><perch:repeater id="category" label="category">
+				<span><perch:content id="cat" title="" type="select" label="cat" options="和食,洋食,中華,エスニック,ラーメン,串,寿司,焼き鳥,居酒屋,鍋,イタリアン,お好み焼き" allowempty="true"/></span>
+			</perch:repeater></td>
+		</tr>
+		<tr>
+			<th>住所</th>
+			<td><a href="https://maps.google.co.jp/maps?q=<perch:content id="address" title="" type="text" label="address" help="address"/>&z=15"><perch:content id="address" title="" type="text" label="address" help="address"/></a></td>
+		</tr>
+		<tr>
+			<th>電話</th>
+			<td><a href="tel:<perch:content id="tel" title="" type="text" label="phonenumber" help="phone number"/>"><perch:content id="tel" title="" type="text" label="phonenumber" help="phone number"/></a></td>
+		</tr>
+		<perch:if exists="url">
+		<tr>
+			<th>HP</th>
+			<td><a href="<perch:content id="url" title="" type="text" label="website" help="website" default="http://"/>"><perch:content id="url" title="" type="text" label="website" help="website" default="http://"/></a></td>
+		</tr></perch:if>
+	</table>
+	<section>
+		<perch:content id="map" type="map" label="Address for map" width="400" height="300" zoom="15" />
+	</section>
+</section>

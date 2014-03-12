@@ -1,0 +1,199 @@
+@charset "utf-8";
+
+/*normalize.css*/
+html {
+font-family: sans-serif;
+-ms-text-size-adjust: 100%;
+-webkit-text-size-adjust: 100%;}
+
+article, aside, details, figcaption,figure,footer,header,main,nav,section,summary {display: block;}
+
+video {display: inline-block;
+  vertical-align: baseline;
+}
+
+a {background: transparent;}
+
+a:active, a:hover {outline: 0;}
+
+abbr[title] {border-bottom: 1px dotted;}
+
+b,strong {font-weight: bold;}
+
+small {font-size: 80%; font-weight: normal}
+
+sup {top: -0.5em;}
+
+sub {bottom: -0.25em;}
+img {border: 0;}
+svg:not(:root) {overflow: hidden;}
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+code,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+color: inherit; /* 1 */
+font: inherit; /* 2 */
+margin: 0; /* 3 */}
+button {overflow: visible;}
+
+button,
+select {
+  text-transform: none;
+}
+
+button,
+html input[type="button"], /* 1 */
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button; /* 2 */
+  cursor: pointer; /* 3 */
+}
+
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+button::-moz-focus-inner,input::-moz-focus-inner {border: 0;padding: 0;}
+
+input {line-height: normal;}
+
+
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+input[type="search"] {
+  -webkit-appearance: textfield; /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box; /* 2 */
+  box-sizing: content-box;
+}
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+textarea {overflow: auto;}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+
+/*総合*/
+$color-main: #373635;
+$color-pink: #FF6C95;
+$color-ltpink: #FFCBDA;
+$color-orange: #FFc200;
+$color-green:  #90CA0D;
+$color-bg: #E5E5E5;
+
+div, h1, h2, h3, section, p, ul,ol,li, dl,dt, dd, table, tr, td, th, figure, figcaption, blockquote {margin: 0; padding: 0;}
+
+html{
+	color: $color-main;
+	font-family: 'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo, 'Yu Gothic', 'ＭＳ Ｐゴシック','MS PGothic',Arial,verdana, sans-serif;
+	font-size: 75%;
+	line-height: 1.5;
+}
+
+@media screen and (min-width: 768px){
+	html {font-size: 87.5%}
+	}
+@media screen and (min-width: 1024px){
+	html {font-size: 100%}
+	}
+body{
+	margin: 0;
+}
+
+a{color: $color-main; text-decoration: none;}
+
+a, :link, :visited, :active, :focus, :hover { outline: none; -moz-outline-style: none; }
+a::-moz-focus-inner {
+  border: 0;
+}
+ul {
+	list-style-type: none;
+}
+
+img{vertical-align: middle;}
+
+/*-------------------------
+main hdg
+-------------------------*/
+
+
+
+/*-------------------------
+FA
+-------------------------*/
+/*!
+ *  Font Awesome 4.0.3 by @davegandy - http://fontawesome.io - @fontawesome
+ *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+ */
+/* FONT PATH
+ * -------------------------- */
+@font-face {
+font-family: 'FontAwesome';
+src: url('../fonts/fontawesome-webfont.eot?v=4.0.3');
+src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.0.3') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff?v=4.0.3') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.0.3') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.0.3#fontawesomeregular') format('svg');
+font-weight: normal;
+font-style: normal;
+}
+.fa {
+display: inline-block;
+font-family: FontAwesome;
+font-style: normal;
+font-weight: normal;
+line-height: 1;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+}
+
+.fa-twitter:before {
+content: "\f099";}
+.fa-arrow-circle-up:before {
+content: "\f0aa";
+}
+.fa-play-circle:before {
+content: "\f144";
+}.fa-check:before {
+content: "\f00c";
+}
+.fa-google-plus-square:before {
+content: "\f0d4";
+}.fa-smile-o:before {
+content: "\f118";
+}
+/*-------------------------
+IE
+-------------------------*/
+.ie {
+	footer {
+		li {
+			display: inline;
+			zoom: 1;
+		}
+	}
+}

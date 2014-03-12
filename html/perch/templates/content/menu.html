@@ -1,0 +1,15 @@
+<perch:if exists="menu-title">
+<section>
+	<h2><perch:content id="menu-title" title="" type="text" label="menu title" help="eg: メニュー、ランチメニュー、ディナーメニューetc"/></h2>
+	<ul>
+		<perch:repeater id="menu-item" label="menu item">
+		<li>
+			<h3><perch:content id="item-title" title="" type="text" label="item title" help=""/></h3>
+			<img src="<perch:content id="item-image" title="" type="image" label="item image" help=""/>" alt="<perch:content id="item-alt" title="" type="text" label="item image alt" help=""/>">
+			<p><perch:content id="item-desc" title="" type="text" label="item description" help=""/></p>
+			<p><perch:content id="item-price" title="" type="text" label="item price" help=""/></p>
+		</li>
+		</perch:repeater>
+	</ul>
+</section>
+</perch:if>

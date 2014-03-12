@@ -1,0 +1,80 @@
+<section>
+	<h2>営業時間</h2>
+	<table>
+		<tr>
+			<th>月:</th>
+			<td>
+				<perch:repeater id="hours_mon" label="Hours Monday">
+				<time datetime="<perch:content id="openingtime-mon" title="" type="text" label="opening time" help="opening time"/>"><perch:content id="openingtime-mon" title="" type="text" label="opening time" help="opening time"/></time>-<time datetime="<perch:content id="closingtime-mon" title="" type="text" label="closing time" help="closing time"/>"><perch:content id="closingtime-mon" title="" type="text" label="closing time" help="closing time"/></time>
+				</perch:repeater>
+			</td>
+		</tr>
+		<tr>
+			<th>火:</th>
+			<td>
+				<perch:repeater id="hours_tues" label="Hours Tuesday">
+				<time datetime="<perch:content id="openingtime-tues" title="" type="text" label="opening time" help="opening time"/>"><perch:content id="openingtime-tues" title="" type="text" label="opening time" help="opening time"/></time>-<time datetime="<perch:content id="closingtime-tues" title="" type="text" label="closing time" help="closing time"/>"><perch:content id="closingtime-tues" title="" type="text" label="closing time" help="closing time"/></time>
+				</perch:repeater>
+			</td>
+		</tr>
+		<tr>
+			<th>水:</th>
+			<td><perch:repeater id="hours_wed" label="Hours Wednesday">
+				<time datetime="<perch:content id="openingtime-wed" title="" type="text" label="opening time" help="opening time"/>"><perch:content id="openingtime-wed" title="" type="text" label="opening time" help="opening time"/></time>-<time datetime="<perch:content id="closingtime-wed" title="" type="text" label="closing time" help="closing time"/>"><perch:content id="closingtime-wed" title="" type="text" label="closing time" help="closing time"/></time>
+				</perch:repeater></td>
+		</tr>
+		<tr>
+			<th>木:</th>
+			<td><perch:repeater id="hours_thurs" label="Hours Thursday">
+				<time datetime="<perch:content id="openingtime-thurs" title="" type="text" label="opening time" help="opening time"/>"><perch:content id="openingtime-thurs" title="" type="text" label="opening time" help="opening time"/></time>-<time datetime="<perch:content id="closingtime-thurs" title="" type="text" label="closing time" help="closing time"/>"><perch:content id="closingtime-thurs" title="" type="text" label="closing time" help="closing time"/></time>
+				</perch:repeater></td>
+		</tr>
+		<tr>
+			<th>金:</th>
+			<td><perch:repeater id="hours_fri" label="Hours Friday">
+				<time datetime="<perch:content id="openingtime-fri" title="" type="text" label="opening time" help="opening time"/>"><perch:content id="openingtime-fri" title="" type="text" label="opening time" help="opening time"/></time>-<time datetime="<perch:content id="closingtime-fri" title="" type="text" label="closing time" help="closing time"/>"><perch:content id="closingtime-fri" title="" type="text" label="closing time" help="closing time"/></time>
+				</perch:repeater></td>
+		</tr>
+		<tr>
+			<th>土:</th>
+			<td><perch:repeater id="hours_sat" label="Hours Saturday">
+				<time datetime="<perch:content id="openingtime-sat" title="" type="text" label="opening time" help="opening time"/>"><perch:content id="openingtime-sat" title="" type="text" label="opening time" help="opening time"/></time>-<time datetime="<perch:content id="closingtime-sat" title="" type="text" label="closing time" help="closing time"/>"><perch:content id="closingtime-sat" title="" type="text" label="closing time" help="closing time"/></time>
+				</perch:repeater></td>
+		</tr>
+		<tr>
+			<th>日:</th>
+			<td><perch:repeater id="hours_sun" label="Hours Sunday">
+				<time datetime="<perch:content id="openingtime-sun" title="" type="text" label="opening time" help="opening time"/>"><perch:content id="openingtime-sun" title="" type="text" label="opening time" help="opening time"/></time>-<time datetime="<perch:content id="closingtime-sun" title="" type="text" label="closing time" help="closing time"/>"><perch:content id="closingtime-sun" title="" type="text" label="closing time" help="closing time"/></time>
+				</perch:repeater></td>
+		</tr>
+		<perch:if exists="hours_holi">
+		<tr>
+			<th>祝日:</th>
+			<td><perch:repeater id="hours_holi" label="Hours Holiday">
+				<time datetime="<perch:content id="openingtime-holi" title="" type="text" label="opening time" help="opening time"/>"><perch:content id="openingtime-holi" title="" type="text" label="opening time" help="opening time"/></time>-<time datetime="<perch:content id="closingtime-holi" title="" type="text" label="closing time" help="closing time"/>"><perch:content id="closingtime-holi" title="" type="text" label="closing time" help="closing time"/></time>
+				</perch:repeater></td>
+		</tr>
+		</perch:if>
+	</table>
+</section>
+<section>
+	<h2>その他の情報</h2>
+	<table>
+		<tr>
+			<th>予算</th>
+			<td>&yen;<perch:content id="budget_low" title="" type="text" label="lowest budgest" help="lowest budgest if any"/> ~ <perch:if exists="budget_high"><perch:content id="budget_high" title="" type="text" label="highest budgest" help="highest budgest if any"/></perch:if></td>
+		</tr>
+		<tr>
+			<th>予約</th>
+			<td><perch:content id="reservation" type="radio" label="reseravation" options="可, 不可" /></td>
+		</tr>
+		<tr>
+			<th>喫煙</th>
+			<td><perch:content id="smoking" type="radio" label="smoking" options="可, 不可" /></td>
+		</tr>
+		<tr>
+			<th>カード</th>
+			<td><perch:content id="cards" type="radio" label="credit cards" options="可, 不可" /></td>
+		</tr>
+	</table>
+</section>
