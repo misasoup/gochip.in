@@ -18,40 +18,25 @@
 	<?php perch_content('register'); ?>
 
 <div id="mainmap" style="width: 500px; height: 400px;"></div>
-<?php
-
-	perch_content_create('mainmap', array(
-		'template'  => 'maininfo.html',
-		'multiple'  => true,
-		'edit-mode' => 'listdetail',
-	));
-
-
-	if (perch_get('s')) {
-
-	// Detail mode
-			perch_content_custom('mainmap', array(
-				'template' => 'maininfo.html',
-				'filter'   => 'slug',
-				'match'    => 'eq',
-				'value'    => perch_get('s'),
-				'count'    => 1,
-			));
-
-	} else {
-
-	// List mode
-			perch_content_custom('mainmap', array(
-				'template' => 'mainmap.html',
-			));
-	}
-
-?>
+<perch:before>
+<ul>
+</perch:before>
+<li>
+	<perch:content id="address" title="" type="text" label="address" help="address"/>
+</li>
+<perch:after>
+</ul>
+</perch:after>
 
 <script type="text/javascript">
 	var locations = [
-		<?php perch_content('mainmap_location'); ?>
+		['Bondi Beach', -33.890542, 151.274856, 4],
+		['Coogee Beach', -33.923036, 151.259052, 5],
+		['Cronulla Beach', -34.028249, 151.157507, 3],
+		['Manly Beach', -33.80010128657071, 151.28747820854187, 2],
+		['Maroubra Beach', -33.950198, 151.259302, 1]
 	];
+
 	var map = new google.maps.Map(document.getElementById('mainmap'), {
 		zoom: 10,
 		center: new google.maps.LatLng(-33.92, 151.25),
@@ -64,20 +49,31 @@
 
 	for (i = 0; i < locations.length; i++) {
 		marker = new google.maps.Marker({
-		position: new google.maps.LatLng(locations[i][2], locations[i][3]),
+		position: new google.maps.LatLng(locations[i][1], locations[i][2]),
 		map: map
-		});
-
-		var locLink = 'http://gochip.in' +locations[i][4];
+	});
 
 			google.maps.event.addListener(marker, 'click', (function(marker, i) {
 			return function() {
-			infowindow.setContent(locations[i][0] + "<br>" + locations[i][1] + '<br><a href="'+locLink+'">詳細はこちら</a>');
+			infowindow.setContent(locations[i][0]);
 			infowindow.open(map, marker);
 			}
 		})(marker, i));
 	}
 </script>
+<script type="text/javascript">
+// 緯度経度を出す
+var geocoder = new google.maps.Geocoder();
+var address = "〒142-0042 東京都品川区豊町6-5-9";
 
+geocoder.geocode( { 'address': address}, function(results, status) {
+
+	if (status == google.maps.GeocoderStatus.OK) {
+		var latitude = results[0].geometry.location.lat();
+		var longitude = results[0].geometry.location.lng();
+		// alert(latitude + longitude);
+	}
+});
+</script>
 </body>
 </html>
