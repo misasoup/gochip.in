@@ -25,21 +25,15 @@
 
 <h1>講座</h1>
 <?php
-// $opts = array(
-// 	'template'=>'events/listing/event-day.html',
-//     'filter'=>'eventDateTime',
-//     'match'=>'eqbetween',
-//     'value'=>'2014-03-29, 2014-04-30'
-// );
-// perch_events_custom($opts);
-perch_events_listing();
+$opts = array(
+	'template'=>'events/listing/event-detail.html',
+    'filter'=>'eventDateTime',
+    'match'=>'eqbetween',
+    'value'=>'2014-03-29, 2014-04-30'
+);
+perch_events_custom($opts);
+// perch_events_listing();
 ?>
 
-<!-- <ul>
-	<li>
-		<h2>講座１</h2>
-		<p>３/22まで</p>
-	</li>
-</ul> -->
 </body>
 </html>
