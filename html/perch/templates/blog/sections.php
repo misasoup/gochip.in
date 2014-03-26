@@ -1,15 +1,18 @@
 <?php include('../perch/runtime.php'); ?>
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-	<title>Perch Example Page</title>
+	<meta charset="utf-8">
+	<title>Sections - Blog Example</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="rss.php" />
 	<?php perch_get_css(); ?>
+	<link rel="stylesheet" href="blog.css" type="text/css" />
 </head>
 <body>
 	<header class="layout-header">
 		<div class="wrapper">
-			<div class="company-name">Perch Members App</div>
+			<div class="company-name">Perch Blog App - Company Name</div>
 			<img src="<?php perch_path('feathers/quill/img/logo.gif'); ?>" alt="Your Logo Here" class="logo"/>
 		</div>
 		<nav class="main-nav">
@@ -20,42 +23,22 @@
 		</nav>
 	</header>
 	
+	<!--  change cols2-nav-right to cols2-nav-left if you want the sidebar on the left -->
 	<div class="wrapper cols2-nav-right">
 	
 		<div class="primary-content">
+		   
+		    
+		    <div class="post">
+		    	<?php perch_blog_sections(); ?>
 
-		<?php 
-			if (perch_member_logged_in()) {
- 				echo '<h1>Hi, '.perch_member_get('first_name').'! This is your profile</h1>';
-				perch_member_form('profile.html');
-
-				echo '<h2>Update your password</h2>';
-				perch_member_form('password.html');
-			}else{
-				echo '<a href="/members/">Please log in</a>';
-			}
-
-		?>
-	</div>
+		    </div>
+		</div>
 		
 		<nav class="sidebar">
-			<?php
-				if (perch_member_logged_in()) {
-			?>	
-				<ul>
-					<li><a href="profile.php">Edit profile</a></li>
-					<li><a href="logout.php">Log out</a></li>
-				</ul>
-
-			<?php
-				}else{
-					perch_members_login_form();	
-				}
-			?>
-		</nav>
-		
+		    
+    	</nav>
 	</div>
-	
 	<footer class="layout-footer">
 		<div class="wrapper">
 			<ul class="social-links">
@@ -65,13 +48,9 @@
 				<li class="linkedin"><a href="#" rel="me">LinkedIn</a></li>
 				<li class="rss"><a href="#">RSS</a></li>
 			</ul>
-			<small>Copyright &copy; 2013</small>
+			<small>Copyright &copy; <?php echo date('Y'); ?></small>
 		</div>
 	</footer>
-
-    
-
-
-    <?php perch_get_javascript(); ?>
+	<?php perch_get_javascript(); ?>
 </body>
 </html>
