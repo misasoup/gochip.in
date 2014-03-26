@@ -32,7 +32,6 @@ $opts = array(
     'value'=>'2014-03-29, 2014-04-30'
 );
 perch_events_custom($opts);
-// perch_events_listing();
 ?>
 
 </body>
