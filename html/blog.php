@@ -24,8 +24,13 @@
 <body>
 
 <?php
+// perch_blog_custom(array(
+//                 'count' => 10,
+//                 'template' => 'post_in_list.html',
+//                 'sort' => 'postDateTime',
+//                 'sort-order' => 'DESC',
+//             ));
 perch_blog_recent_posts(10);
 ?>
-
 </body>
 </html>
